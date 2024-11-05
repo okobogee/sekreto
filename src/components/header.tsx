@@ -1,20 +1,30 @@
 import styles from '@/styles/header.module.css';
-import { GitHub as GitHubIcon } from 'react-feather';
+import { GitHub as GitHubIcon, Download as DownloadIcon } from 'react-feather';
 
 export function Header() {
   return (
     <header className={styles.root}>
       <h1>Sekreto</h1>
       <div className={styles.appVersion}>{__APP_VERSION__}</div>
-      <a
-        href="https://github.com/okobogee/sekreto"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Go to GitHub page"
-        className={styles.link}
-      >
-        <GitHubIcon size={16} />
-      </a>
+      <div className={styles.menu}>
+        <a
+          href="./index.html"
+          className={styles.link}
+          download={`sekreto-${__APP_VERSION__}.html`}
+          title="Download app for offline use"
+        >
+          <DownloadIcon size={18} />
+        </a>
+        <a
+          href="https://github.com/okobogee/sekreto"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Go to GitHub page"
+          className={styles.link}
+        >
+          <GitHubIcon size={18} />
+        </a>
+      </div>
     </header>
   );
 }

@@ -8,10 +8,16 @@
   color: var(--muted-foreground);
 }
 
-.link {
+.menu {
   display: flex;
   align-items: center;
   margin-left: auto;
+  gap: 20px;
+}
+
+.link {
+  align-items: center;
+  display: flex;
   border-radius: 50%;
   outline-offset: 4px;
 }
