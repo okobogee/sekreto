@@ -1,0 +1,74 @@
+:root {
+  --primary: #fafafa;
+  --primary-foreground: #0f0f0f;
+  --secondary: #272727;
+  --secondary-foreground: #f1f1f1;
+  --background: #0f0f0f;
+  --foreground: #fafafa;
+  --muted: #1a1a1a;
+  --muted-foreground: #b3b3b3;
+  --border: #262626;
+
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  height: 100%;
+  font-size: 12.5px;
+  color-scheme: dark;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-width: 320px;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+@media print {
+  #root {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+  
+  body::after {
+    content: 'Use the Save function to generate a printable list of your code-word pairs.';
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}

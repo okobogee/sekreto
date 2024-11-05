@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  margin-left: 4px;
+  word-break: break-all;
+  color: var(--muted-foreground);
+}
+
+button.iconButton {
+  height: 14px;
+  width: 14px;
+  margin-left: 6px;
+  outline-offset: 2px;
+  flex-shrink: 0;
+}
+
+.icon {
+  margin-bottom: -1.5px;
+}
