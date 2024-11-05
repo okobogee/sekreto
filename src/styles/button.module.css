@@ -1,7 +1,7 @@
 .root {
   border-radius: 32px;
   border: 0;
-  font-size: 1rem;
+  font-size: 1.075rem;
   font-family: inherit;
   font-weight: 600;
   cursor: pointer;
@@ -9,7 +9,7 @@
 }
 
 .primary {
-  padding: 0 20px;
+  padding: 0 24px;
   min-height: 42px;
   background-color: var(--primary);
   color: var(--primary-foreground);
@@ -29,7 +29,7 @@
 }
 
 .secondary {
-  padding: 0 16px;
+  padding: 0 24px;
   min-height: 42px;
   background-color: var(--secondary);
   color: var(--secondary-foreground);

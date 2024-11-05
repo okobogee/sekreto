@@ -25,14 +25,18 @@
   color: var(--muted-foreground);
 }
 
-button.iconButton {
+button.infoButton {
   height: 14px;
   width: 14px;
-  margin-left: 6px;
-  outline-offset: 2px;
+  margin-left: 4px;
+  outline-offset: 1px;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(1px);
 }
 
-.icon {
+.zoomIcon {
   margin-bottom: -1.5px;
 }
