@@ -23,10 +23,11 @@ export function CodeWordPairs({ codeWordPairs, fontSize, isPrivacyTipVisible, on
 
   return (
     <div className={styles.root}>
-      <div className={styles.wrapper1} data-testid="output">
-        <div className={styles.wrapper2} style={{ fontSize: `${String(fontSize)}%` }}>
+      <div className={styles.outerWrapper} data-testid="output">
+        <div className={styles.innerWrapper} style={{ fontSize: `${String(fontSize)}%` }} tabIndex={0}>
           {codeWordPairsElement}
         </div>
+        <div className={styles.outerWrapperFocusBorder}></div>
         {isPrivacyTipVisible && (
           <Button variant="plain" className={styles.message} onClick={onPrivacyTipClick}>
             Mouse cursor and text selection are disabled. Zoom in/out for enhanced privacy. Click here to dismiss this

@@ -44,6 +44,11 @@ a {
   color: inherit;
 }
 
+*:focus-visible {
+  outline-offset: 4px;
+  outline: 2px solid var(--foreground);
+}
+
 #root {
   width: 100%;
   margin: 0 auto;

@@ -9,7 +9,7 @@
   color: var(--foreground);
 }
 
-.wrapper1 {
+.outerWrapper {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,13 +17,29 @@
   flex-grow: 1;
 }
 
-.wrapper2 {
+.innerWrapper {
   overflow: auto;
   flex-wrap: wrap;
   display: flex;
   flex-grow: 1;
   padding: 8px;
-  outline-offset: -2px;
+}
+
+.outerWrapperFocusBorder {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  border: 0;
+  bottom: 0;
+  z-index: 100;
+  border: 2px solid var(--foreground);
+  border-radius: 8px;
+}
+
+.innerWrapper:focus-visible + .outerWrapperFocusBorder {
+  display: block;
 }
 
 .codeWordPair {
