@@ -89,5 +89,5 @@ export function saveRecoverySheetPDF(date: string, note: string, hash: string, c
     linHeight: bodyLineHeight,
   });
 
-  doc.save(`sekreto-${__APP_VERSION__}-${hash.substring(0, 7)}.pdf`);
+  doc.save(`sekreto-${hash.substring(0, 7)}.pdf`);
 }
