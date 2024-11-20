@@ -42,7 +42,7 @@ function Info({ date, hash }: InfoProps) {
         <span className={styles.value} data-testid="hash">
           {hash}
           <Button variant="plain" onClick={showHashInfo} className={styles.infoButton} title="Show more info">
-            <InfoIcon size={12} />
+            <InfoIcon className={styles.infoIcon} />
           </Button>
         </span>
       </div>
@@ -72,10 +72,10 @@ export function Footer({
             </Button>
             <ButtonGroup>
               <Button variant="secondary" title="Zoom out" aria-label="Zoom Out" onClick={onZoomOutClick}>
-                <ZoomOutIcon className={styles.zoomIcon} size={18} />
+                <ZoomOutIcon className={styles.zoomIcon} />
               </Button>
               <Button variant="secondary" title="Zoom in" aria-label="Zoom In" onClick={onZoomInClick}>
-                <ZoomInIcon className={styles.zoomIcon} size={18} />
+                <ZoomInIcon className={styles.zoomIcon} />
               </Button>
             </ButtonGroup>
           </>

@@ -1,12 +1,12 @@
 .root {
   display: flex;
   flex-wrap: wrap-reverse;
-  gap: 10px;
+  gap: calc(10rem / 16);
 }
 
 .buttons {
   display: flex;
-  gap: 10px;
+  gap: calc(10rem / 16);
   margin-right: auto;
 }
 
@@ -20,23 +20,30 @@
 }
 
 .value {
-  margin-left: 4px;
+  margin-left: calc(4rem / 16);
   word-break: break-all;
   color: var(--muted-foreground);
 }
 
 button.infoButton {
-  height: 14px;
-  width: 14px;
-  margin-left: 4px;
-  outline-offset: 1px;
-  flex-shrink: 0;
+  --size: calc(12rem / 16);
+  height: var(--size);
+  width: var(--size);
+  margin-left: calc(4rem / 16);
+  outline-offset: calc(1rem / 16);
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  transform: translateY(1px);
+  transform: translateY(calc(1.25rem / 16));
+}
+
+.infoIcon {
+  height: var(--size);
+  width: var(--size);
 }
 
 .zoomIcon {
-  margin-bottom: -1.5px;
+  --size: calc(18rem / 16);
+  margin-bottom: calc(-1.5rem / 16);
+  width: var(--size);
+  height: var(--size);
 }

@@ -16,7 +16,7 @@ export function Header() {
             download={`sekreto-${__APP_VERSION__}.html`}
             title="Download app for offline use"
           >
-            <DownloadIcon size={18} />
+            <DownloadIcon className={styles.icon} />
           </a>
         ) : null}
         <a
@@ -26,7 +26,7 @@ export function Header() {
           title="Go to GitHub page"
           className={styles.link}
         >
-          <GitHubIcon size={18} />
+          <GitHubIcon className={styles.icon} />
         </a>
       </div>
     </header>

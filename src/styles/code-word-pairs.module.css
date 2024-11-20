@@ -1,5 +1,5 @@
 .root {
-  border-radius: 8px;
+  border-radius: calc(8rem / 16);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -22,7 +22,7 @@
   flex-wrap: wrap;
   display: flex;
   flex-grow: 1;
-  padding: 8px;
+  padding: calc(8rem / 16);
 }
 
 .outerWrapperFocusBorder {
@@ -34,11 +34,11 @@
   border: 0;
   bottom: 0;
   z-index: 100;
-  border: 2px solid var(--foreground);
-  border-radius: 8px;
+  border: calc(2rem / 16) solid var(--foreground);
+  border-radius: calc(8rem / 16);
 }
 
-.innerWrapper:focus-visible + .outerWrapperFocusBorder {
+.innerWrapper:focus-visible+.outerWrapperFocusBorder {
   display: block;
 }
 
@@ -64,16 +64,16 @@ button.message {
   border: 0;
   cursor: pointer;
   color: var(--foreground);
-  padding: 8px;
+  padding: calc(8rem / 16);
   font-weight: 400;
   background: var(--secondary);
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: calc(8rem / 16);
+  border-bottom-right-radius: calc(8rem / 16);
 }
 
 .message:focus-visible {
-  outline: 2px solid white;
-  outline-offset: -2px;
+  outline: calc(2rem / 16) solid white;
+  outline-offset: calc(-2rem / 16);
 }
 
 .message:hover {

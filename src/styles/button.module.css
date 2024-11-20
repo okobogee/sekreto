@@ -1,7 +1,9 @@
 .root {
-  border-radius: 32px;
+  --min-height: calc(42rem / 16);
+  --padding: 0 calc(24rem / 16);
+  border-radius: calc(32rem / 16);
   border: 0;
-  font-size: 1.075rem;
+  font-size: calc(14rem / 16);
   font-family: inherit;
   font-weight: 600;
   cursor: pointer;
@@ -9,15 +11,15 @@
 }
 
 .primary {
-  padding: 0 24px;
-  min-height: 42px;
+  padding: var(--padding);
+  min-height: var(--min-height);
   background-color: var(--primary);
   color: var(--primary-foreground);
 }
 
 .primary:focus-visible {
-  outline: 2px solid var(--primary-foreground);
-  outline-offset: -4px;
+  outline: calc(2rem / 16) solid var(--primary-foreground);
+  outline-offset: calc(-4rem / 16);
 }
 
 .primary:hover {
@@ -29,15 +31,15 @@
 }
 
 .secondary {
-  padding: 0 24px;
-  min-height: 42px;
+  padding: var(--padding);
+  min-height: var(--min-height);
   background-color: var(--secondary);
   color: var(--secondary-foreground);
 }
 
 .secondary:focus-visible {
-  outline: 2px solid var(--secondary-foreground);
-  outline-offset: -2px;
+  outline: calc(2rem / 16) solid var(--secondary-foreground);
+  outline-offset: calc(-2rem / 16);
 }
 
 .secondary:hover {

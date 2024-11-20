@@ -9,14 +9,8 @@
   --muted-foreground: #b3b3b3;
   --border: #262626;
 
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
   height: 100%;
-  font-size: 12.5px;
   color-scheme: dark;
-  color: var(--foreground);
-  background-color: var(--background);
 }
 
 * {
@@ -25,16 +19,23 @@
 }
 
 body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--foreground);
+  background-color: var(--background);
+  font-size: calc(12.5rem / 16);
   margin: 0;
   display: flex;
   flex-direction: column;
   place-items: center;
   min-width: 320px;
   height: 100%;
+
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: calc(24rem / 16);
   line-height: 1;
   margin: 0;
   font-weight: 600;
@@ -45,18 +46,18 @@ a {
 }
 
 *:focus-visible {
-  outline-offset: 4px;
-  outline: 2px solid var(--foreground);
+  outline-offset: calc(4rem / 16);
+  outline: calc(2rem / 16) solid var(--foreground);
 }
 
 #root {
   width: 100%;
   margin: 0 auto;
-  padding: 12px;
+  padding: calc(12rem / 16);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: calc(12rem / 16);
   height: 100%;
 }
 
@@ -68,7 +69,7 @@ a {
   body {
     background: white;
   }
-  
+
   body::after {
     content: 'Use the Save function to generate a printable list of your code-word pairs.';
     text-align: center;
