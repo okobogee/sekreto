@@ -54,14 +54,14 @@ export function saveRecoverySheetPDF(date: string, note: string, hash: string, c
   const headerLineHeight = 2.7;
 
   const bodyFontSize = 5.46;
-  const bodyLineHeight = 1.77;
-  const codeWordPairWidth = 15.13;
+  const bodyLineHeight = 1.7747;
+  const codeWordPairWidth = 14.8;
 
   doc.setFont('helvetica').setFontSize(headerFontSize);
 
   const lineWithNote = `Sekreto ${__APP_VERSION__} BIP39 Recovery Sheet - ${date} ${note ? `- ${note}` : ''}`;
   if (doc.getTextWidth(lineWithNote) > 210 - marginX * 2) {
-    throw Error('Your note contains too many characters. Please make it shorter.');
+    throw new Error('Your note contains too many characters. Please make it shorter.');
   }
 
   doc

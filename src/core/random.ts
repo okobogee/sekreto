@@ -4,7 +4,7 @@
  */
 export function getRandomCode(): string {
   const min = 0;
-  const max = 99999;
+  const max = 9999;
   let rval = 0;
   const range = max - min;
 
@@ -29,5 +29,5 @@ export function getRandomCode(): string {
 
   if (rval >= range) return getRandomCode();
 
-  return (min + rval).toString().padStart(5, '0');
+  return (min + rval).toString().padStart(4, '0');
 }
