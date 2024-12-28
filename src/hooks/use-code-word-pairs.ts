@@ -9,6 +9,7 @@ export function useCodeWordPairs() {
   const [codeWordPairs, setCodeWordPairs] = useState<string[]>([]);
   const [hash, setHash] = useState('');
   const [date, setDate] = useState('');
+  const [isSaved, setSaved] = useState<boolean | undefined>(undefined);
 
   const generate = () => {
     const result = generateCodeWordPairs();
@@ -16,6 +17,7 @@ export function useCodeWordPairs() {
     setCodeWordPairs(result);
     codeWordPairsSortedByCode = [...result].sort();
     setHash(getHashSHA256(codeWordPairsSortedByCode.join(' ')));
+    setSaved(false);
   };
 
   const save = (previousNote?: string | null): void => {
@@ -30,11 +32,13 @@ export function useCodeWordPairs() {
         if (e instanceof Error) {
           alert(e.message);
           save(note);
+          return;
         }
         console.error(e);
       }
+      setSaved(true);
     }
   };
 
-  return { codeWordPairs, hash, date, generate, save };
+  return { codeWordPairs, hash, date, isSaved, generate, save };
 }

@@ -5,6 +5,7 @@ import { usePreventTextSearch } from '@/hooks/use-prevent-text-search';
 import { Header } from './header';
 import { CodeWordPairs } from './code-word-pairs';
 import { Footer } from './footer';
+import { useConfirmExit } from '@/hooks/use-confirm-exit';
 
 function confirmDelete() {
   return window.confirm(
@@ -13,11 +14,12 @@ function confirmDelete() {
 }
 
 export function App() {
-  const { codeWordPairs, hash, date, save, generate } = useCodeWordPairs();
+  const { codeWordPairs, hash, date, isSaved, save, generate } = useCodeWordPairs();
   const [fontSize, setFontSize] = useState(100);
   const [isPrivacyTipVisible, setPrivacyTipVisible] = useState(false);
 
   usePreventTextSearch();
+  useConfirmExit(isSaved);
 
   const handleGenerateClick = () => {
     if (codeWordPairs.length) {
