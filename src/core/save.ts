@@ -59,7 +59,7 @@ export function saveRecoverySheetPDF(date: string, note: string, hash: string, c
 
   doc.setFont('helvetica').setFontSize(headerFontSize);
 
-  const lineWithNote = `Sekreto ${__APP_VERSION__} BIP39 Recovery Sheet - ${date} ${note ? `- ${note}` : ''}`;
+  const lineWithNote = `Sekreto ${__APP_VERSION__} Recovery Sheet - ${date} ${note ? `- ${note}` : ''}`;
   if (doc.getTextWidth(lineWithNote) > 210 - marginX * 2) {
     throw new Error('Your note contains too many characters. Please make it shorter.');
   }
@@ -67,7 +67,7 @@ export function saveRecoverySheetPDF(date: string, note: string, hash: string, c
   doc
     .text(lineWithNote, marginX, marginY)
     .text(
-      `SHA256: ${hash} (of content below the line: hyphenated code-word pairs separated by single space, no line breaks)`,
+      `SHA256: ${hash} (of content below the line: hyphenated code-word pairs separated by single space; no line breaks)`,
       marginX,
       marginY + headerLineHeight
     )
