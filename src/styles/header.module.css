@@ -1,10 +1,16 @@
 .root {
   display: flex;
   gap: calc(6rem / 16);
-  align-items: end;
+  align-items: center;
 }
 
-.appVersion {
+.title {
+  display: flex;
+  align-items: end;
+  gap: calc(8rem / 16);
+}
+
+.version {
   color: var(--muted-foreground);
 }
 
@@ -12,7 +18,7 @@
   display: flex;
   align-items: center;
   margin-left: auto;
-  gap: calc(20rem / 16);
+  gap: calc(24rem / 16);
 }
 
 .link {

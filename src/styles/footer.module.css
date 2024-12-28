@@ -11,7 +11,8 @@
 }
 
 .label {
-  font-weight: 600;
+  font-weight: 700;
+  display: inline-block;
 }
 
 .info {
@@ -25,25 +26,22 @@
   color: var(--muted-foreground);
 }
 
-button.infoButton {
+.sha256InfoButton {
+  font-size: inherit;
+  display: inline-flex;
+  align-items: center;
+  outline-offset: calc(1rem / 16);
+}
+
+.infoIcon {
   --size: calc(12rem / 16);
   height: var(--size);
   width: var(--size);
   margin-left: calc(4rem / 16);
-  outline-offset: calc(1rem / 16);
-  display: inline-flex;
-  align-items: center;
-  transform: translateY(calc(1.25rem / 16));
-}
-
-.infoIcon {
-  height: var(--size);
-  width: var(--size);
 }
 
 .zoomIcon {
   --size: calc(18rem / 16);
-  margin-bottom: calc(-1.5rem / 16);
   width: var(--size);
   height: var(--size);
 }

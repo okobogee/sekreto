@@ -38,12 +38,12 @@ function Info({ date, hash }: InfoProps) {
         </span>
       </div>
       <div>
-        <span className={styles.label}>SHA256:</span>
+        <Button variant="plain" onClick={showHashInfo} className={styles.sha256InfoButton} title="Show more info">
+          SHA256
+          <InfoIcon className={styles.infoIcon} />:
+        </Button>
         <span className={styles.value} data-testid="hash">
           {hash}
-          <Button variant="plain" onClick={showHashInfo} className={styles.infoButton} title="Show more info">
-            <InfoIcon className={styles.infoIcon} />
-          </Button>
         </span>
       </div>
     </div>

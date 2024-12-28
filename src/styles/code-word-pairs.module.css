@@ -22,7 +22,7 @@
   flex-wrap: wrap;
   display: flex;
   flex-grow: 1;
-  padding: calc(6rem / 16) calc(10rem / 16);
+  padding: calc(8rem / 16);
 }
 
 .outerWrapperFocusBorder {
@@ -64,7 +64,7 @@ button.message {
   border: 0;
   cursor: pointer;
   color: var(--foreground);
-  padding: calc(8rem / 16) calc(10rem / 16);
+  padding: calc(8rem / 16);
   font-weight: 400;
   background: var(--secondary);
   border-bottom-left-radius: calc(8rem / 16);

@@ -6,8 +6,10 @@ const isOnline = window.location.protocol !== 'file:';
 export function Header() {
   return (
     <header className={styles.root}>
-      <h1>Sekreto</h1>
-      <div className={styles.appVersion}>{__APP_VERSION__}</div>
+      <div className={styles.title}>
+        <h1>Sekreto</h1>
+        <div className={styles.version}>{__APP_VERSION__}</div>
+      </div>
       <div className={styles.menu}>
         {isOnline ? (
           <a

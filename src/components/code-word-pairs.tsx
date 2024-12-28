@@ -9,6 +9,8 @@ interface CodeWordPairsProps {
   onPrivacyTipClick: () => void;
 }
 
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
 export function CodeWordPairs({ codeWordPairs, fontSize, isPrivacyTipVisible, onPrivacyTipClick }: CodeWordPairsProps) {
   const codeWordPairsElement = useMemo(
     () => (
@@ -30,8 +32,8 @@ export function CodeWordPairs({ codeWordPairs, fontSize, isPrivacyTipVisible, on
         <div className={styles.outerWrapperFocusBorder}></div>
         {isPrivacyTipVisible && (
           <Button variant="plain" className={styles.message} onClick={onPrivacyTipClick}>
-            Mouse cursor and text selection are disabled. Zoom in/out for enhanced privacy. Click here to dismiss this
-            message.
+            {isTouchDevice ? 'Text selection is disabled. ' : 'Mouse cursor and text selection are disabled. '}
+            Zoom in/out for enhanced privacy. Click here to dismiss this message.
           </Button>
         )}
       </div>
