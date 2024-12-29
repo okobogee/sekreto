@@ -54,8 +54,8 @@ export function saveRecoverySheetPDF(date: string, note: string, hash: string, c
   const headerLineHeight = 2.7;
 
   const bodyFontSize = 5.46;
-  const bodyLineHeight = 1.7747;
-  const codeWordPairWidth = 14.8;
+  const bodyLineHeight = 1.77;
+  const codeWordPairWidth = 15.17;
 
   doc.setFont('helvetica').setFontSize(headerFontSize);
 
