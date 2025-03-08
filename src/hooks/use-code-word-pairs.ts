@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { generateCodeWordPairs } from '@/core/code-word-pairs';
+import { type CodeWordPair, generateCodeWordPairs } from '@/core/code-word-pairs';
 import { getCurrentDate } from '@/core/date';
 import { getHashSHA256, saveRecoverySheetPDF } from '@/core/save';
+import { adaptCodeWordPairToTextCodeFirst, sortCodeWordPairByCode } from '@/utils/code-word-pairs';
 
-let codeWordPairsSortedByCode: string[] = [];
+let codeWordPairsSortedByCode: CodeWordPair[] = [];
 
 export function useCodeWordPairs() {
-  const [codeWordPairs, setCodeWordPairs] = useState<string[]>([]);
+  const [codeWordPairs, setCodeWordPairs] = useState<CodeWordPair[]>([]);
   const [hash, setHash] = useState('');
   const [date, setDate] = useState('');
   const [isSaved, setSaved] = useState<boolean | undefined>(undefined);
@@ -15,8 +16,8 @@ export function useCodeWordPairs() {
     const result = generateCodeWordPairs();
     setDate(getCurrentDate());
     setCodeWordPairs(result);
-    codeWordPairsSortedByCode = [...result].sort();
-    setHash(getHashSHA256(codeWordPairsSortedByCode.join(' ')));
+    codeWordPairsSortedByCode = [...result].sort(sortCodeWordPairByCode);
+    setHash(getHashSHA256(codeWordPairsSortedByCode.map(adaptCodeWordPairToTextCodeFirst).join(' ')));
     setSaved(false);
   };
 

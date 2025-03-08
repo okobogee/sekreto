@@ -1,9 +1,11 @@
 import { useMemo } from 'react';
 import styles from '@/styles/code-word-pairs.module.css';
 import { Button } from './button';
+import { type CodeWordPair } from '@/core/code-word-pairs';
+import { adaptCodeWordPairToTextWordFirst } from '@/utils/code-word-pairs';
 
 interface CodeWordPairsProps {
-  codeWordPairs: string[];
+  codeWordPairs: CodeWordPair[];
   fontSize: number;
   isPrivacyTipVisible: boolean;
   onPrivacyTipClick: () => void;
@@ -16,7 +18,11 @@ export function CodeWordPairs({ codeWordPairs, fontSize, isPrivacyTipVisible, on
     () => (
       <>
         {codeWordPairs.map((codeWordPair) => (
-          <span data-content={codeWordPair} key={codeWordPair} className={styles.codeWordPair} />
+          <span
+            data-content={adaptCodeWordPairToTextWordFirst(codeWordPair)}
+            key={codeWordPair.code}
+            className={styles.codeWordPair}
+          />
         ))}
       </>
     ),

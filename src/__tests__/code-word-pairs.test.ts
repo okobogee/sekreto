@@ -24,6 +24,10 @@ describe('when a code is already associated with a word', () => {
 
     const codes = generateCodeWordPairs();
 
-    expect(codes).toEqual(['00001-access', '00002-chapter', '00003-easy']);
+    expect(codes).toEqual([
+      { code: '00001', word: 'access' },
+      { code: '00002', word: 'chapter' },
+      { code: '00003', word: 'easy' },
+    ]);
   });
 });

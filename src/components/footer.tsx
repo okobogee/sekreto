@@ -21,9 +21,9 @@ interface InfoProps {
 function showHashInfo() {
   window.alert(
     [
-      'This is the hash of the code-word pairs output, but sorted by code instead of alphabetically by word.',
-      'You can find the correctly sorted output that matches this hash in the file produced by clicking on "Save."',
-      'The purpose of this hash is for you to easily identify the output after it has been saved.',
+      'This is the hash of the code-word pairs seen on screen but sorted by code. For example: "0009-history 0012-autumn".',
+      'The pairs sorted this way can be found in your Recovery Sheet, which is created by clicking on "Save".',
+      "You can use this hash to uniquely identify your pairs and verify your Recovery Sheet's content integrity.",
     ].join('\n')
   );
 }

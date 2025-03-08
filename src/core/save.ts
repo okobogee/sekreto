@@ -1,5 +1,7 @@
 import sha256 from 'crypto-js/sha256';
 import { jsPDF as JsPDF } from 'jspdf';
+import { type CodeWordPair } from './code-word-pairs';
+import { adaptCodeWordPairToTextCodeFirst } from '@/utils/code-word-pairs';
 
 export function getHashSHA256(content: string) {
   const hashDigest = sha256(content);
@@ -8,7 +10,7 @@ export function getHashSHA256(content: string) {
 
 interface PrintCodeWordPairs {
   doc: JsPDF;
-  codeWordPairs: string[];
+  codeWordPairs: CodeWordPair[];
   codeWordPairWidth: number;
   initialY: number;
   marginY: number;
@@ -37,15 +39,21 @@ function writeCodeWordPairs({
       doc.addPage();
       y = marginY;
     }
-    let code = codeWordPairs[i];
-    if (code === undefined) throw Error(`Unable to retrieve code from index ${String(i)}`);
-    if (i !== codeWordPairs.length - 1) code = code.concat(' ');
-    doc.text(code, x, y);
+    const codeWordPair = codeWordPairs[i];
+    if (codeWordPair === undefined) throw Error(`Unable to retrieve code from index ${String(i)}`);
+    let text = adaptCodeWordPairToTextCodeFirst(codeWordPair);
+    if (i !== codeWordPairs.length - 1) text = text.concat(' ');
+    doc.text(text, x, y);
     x += codeWordPairWidth;
   }
 }
 
-export function saveRecoverySheetPDF(date: string, note: string, hash: string, codeWordPairsSortedByCode: string[]) {
+export function saveRecoverySheetPDF(
+  date: string,
+  note: string,
+  hash: string,
+  codeWordPairsSortedByCode: CodeWordPair[]
+) {
   const doc = new JsPDF('p', 'mm', 'a4');
   const marginX = 6.35;
   const marginY = 6.35;

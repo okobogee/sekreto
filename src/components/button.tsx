@@ -1,9 +1,9 @@
 import styles from '@/styles/button.module.css';
 import clsx from 'clsx';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'plain';
+type ButtonVariant = 'primary' | 'secondary' | 'plain';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
 }
 
