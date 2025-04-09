@@ -23,7 +23,7 @@ function showHashInfo() {
     [
       'This is the hash of the code-word pairs seen on screen but sorted by code. For example: "0009-history 0012-autumn".',
       'The pairs sorted this way can be found in your Recovery Sheet, which is created by clicking on "Save".',
-      "You can use this hash to uniquely identify your pairs and verify your Recovery Sheet's content integrity.",
+      "You can use this hash to uniquely identify your code-word pairs and verify your Recovery Sheet's content integrity.",
     ].join('\n')
   );
 }
@@ -32,18 +32,18 @@ function Info({ date, hash }: InfoProps) {
   return (
     <div className={styles.info}>
       <div>
+        <span className={styles.label}>SHA256:</span>
+        <span className={styles.value} data-testid="hash">
+          {hash}
+        </span>
+        <Button variant="plain" onClick={showHashInfo} className={styles.sha256InfoButton} title="Show more info">
+          <InfoIcon className={styles.infoIcon} />
+        </Button>
+      </div>
+      <div>
         <span className={styles.label}>Date:</span>
         <span className={styles.value} data-testid="date">
           {date}
-        </span>
-      </div>
-      <div>
-        <Button variant="plain" onClick={showHashInfo} className={styles.sha256InfoButton} title="Show more info">
-          SHA256
-          <InfoIcon className={styles.infoIcon} />:
-        </Button>
-        <span className={styles.value} data-testid="hash">
-          {hash}
         </span>
       </div>
     </div>

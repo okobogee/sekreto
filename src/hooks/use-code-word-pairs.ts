@@ -23,7 +23,7 @@ export function useCodeWordPairs() {
 
   const save = (previousNote?: string | null): void => {
     const note = window.prompt(
-      'Add a note to the top of the file (optional, leave it blank for none):',
+      'Add a note to the top of the file (optional: leave it blank and click OK for none)',
       typeof previousNote === 'string' ? previousNote : undefined
     );
     if (note !== null) {
